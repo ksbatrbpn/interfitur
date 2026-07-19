@@ -116,6 +116,67 @@ body.explorer-mode #analysisPanel{right:72px!important;top:92px!important;max-wi
 .upload-analysis-toggle{border-radius:15px}.upload-analysis-toggle .upload-icon{display:grid!important;place-items:center!important;width:34px!important;height:34px!important;flex:0 0 34px!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;font-size:22px!important;color:#fff!important}.upload-analysis-toggle .upload-icon i{display:block;line-height:1}.upload-analysis-toggle:hover .upload-icon{background:transparent!important}
 .spatial-result-footer{margin-top:10px;padding-top:9px;border-top:1px solid #d8e2df;color:#66756f;font-size:10px;line-height:1.45}.field-bhumi-link{width:100%;margin:9px 0 1px!important}
 </style>
+<style id="mobile-analysis-panel-final-fix">
+@media (max-width:640px){
+  #analysisPanel{
+    position:fixed!important;
+    top:auto!important;
+    right:8px!important;
+    bottom:10px!important;
+    left:8px!important;
+    width:auto!important;
+    max-width:none!important;
+    max-height:min(58dvh,calc(100dvh - 96px))!important;
+    padding:12px 14px 22px!important;
+    overflow-x:hidden!important;
+    overflow-y:auto!important;
+    z-index:10035!important;
+    box-sizing:border-box!important;
+    scrollbar-gutter:auto!important;
+    scrollbar-width:none!important;
+    -webkit-overflow-scrolling:touch;
+  }
+  #analysisPanel::-webkit-scrollbar{width:0!important;height:0!important;display:none!important}
+  #analysisContent{padding-bottom:12px}
+  #analysisPanel .analysis-panel-head{
+    position:sticky!important;
+    top:-12px!important;
+    z-index:3!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    min-height:44px;
+    padding:16px 0 6px!important;
+    background:#fff!important;
+  }
+  #analysisPanel .analysis-panel-head h3{margin:0!important}
+  #analysisPanel .analysis-panel-head .panel-close{
+    position:relative!important;
+    top:auto!important;
+    right:auto!important;
+    flex:0 0 36px;
+    width:36px!important;
+    height:36px!important;
+    margin-left:auto!important;
+    z-index:2;
+  }
+  #analysisPanel .analysis-panel-head:after{
+    position:absolute!important;
+    top:5px!important;
+    left:50%!important;
+    width:42px!important;
+    height:4px!important;
+    margin:0!important;
+    transform:translateX(-50%);
+  }
+  body:has(#analysisPanel[style*="display: block"]) .field-explorer-toggle,
+  body:has(#analysisPanel[style*="display: block"]) .upload-analysis-toggle{
+    opacity:0!important;
+    visibility:hidden!important;
+    pointer-events:none!important;
+  }
+}
+</style>
 </head>
     <body>
         <div id="map">
